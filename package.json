@@ -1,8 +1,0 @@
-{
-  "name": "cryax-api",
-  "private": true,
-  "scripts": {
-    "build": "node host/worker/build.mjs",
-    "deploy": "wrangler deploy"
-  }
-}
