@@ -22,4 +22,3 @@ host/data/
 *.log
 .DS_Store
 
-.git-token
