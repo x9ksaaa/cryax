@@ -14,7 +14,7 @@ function json(data, status = 200) {
 }
 
 function secretOk(request, env, url) {
-  const expected = String(env.API_SECRET || "bloodontop");
+  const expected = String(env.API_SECRET || "cryaxontop");
   const got = (request.headers.get("x-api-secret") || url.searchParams.get("secret") || "").trim();
   return got === expected;
 }

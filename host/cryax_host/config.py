@@ -61,7 +61,7 @@ def _csv_ints(raw: str | None) -> set[int]:
 
 @dataclass
 class Config:
-    api_secret: str = "bloodontop"
+    api_secret: str = "cryaxontop"
     host: str = "0.0.0.0"
     port: int = 8787
     public_base_url: str = "http://127.0.0.1:8787"
@@ -92,7 +92,7 @@ def load_config() -> Config:
     if not data_dir.is_absolute():
         data_dir = (REPO_ROOT / data_dir).resolve()
     cfg = Config(
-        api_secret=os.environ.get("API_SECRET") or "bloodontop",
+        api_secret=os.environ.get("API_SECRET") or "cryaxontop",
         host=os.environ.get("HOST") or "0.0.0.0",
         port=int(os.environ.get("PORT") or "8787"),
         public_base_url=os.environ.get("PUBLIC_BASE_URL") or "http://127.0.0.1:8787",
