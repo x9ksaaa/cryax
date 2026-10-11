@@ -1,0 +1,10 @@
+# Copy this into your executor workspace as CryaxApiHost.txt.
+#
+# Same PC as this host process:
+http://127.0.0.1:8787
+#
+# Other players: replace with a hostname on a domain you own, e.g.
+# https://api.yourname.com
+#
+# Optional second non-comment line overrides API_SECRET (default bloodontop):
+bloodontop

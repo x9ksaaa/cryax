@@ -1,0 +1,20 @@
+# Cloudflare Git deploys run `npx wrangler deploy` from the repo root.
+# This file must live here so Wrangler does not treat the repo as a static site.
+name = "cryax-api"
+main = "host/worker/src/worker.js"
+compatibility_date = "2026-01-15"
+workers_dev = true
+
+[vars]
+API_SECRET = "bloodontop"
+
+[build]
+command = "node host/worker/build.mjs"
+
+[[durable_objects.bindings]]
+name = "STORE"
+class_name = "CryaxStore"
+
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["CryaxStore"]
