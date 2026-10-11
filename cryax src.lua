@@ -97,8 +97,8 @@ local VERIFIED_BADGE_GLYPH = utf8.char(0xE000)
 local BAKED_API_URL = "http://127.0.0.1:8787"
 local NETWORK = {
 	API_URL = BAKED_API_URL,
-	API_ROOT = BAKED_API_URL .. "/scorp/v1",
-	API_SECRET = "bloodontop",
+	API_ROOT = BAKED_API_URL .. "/cryax/v1",
+	API_SECRET = "API_SECRET_YOU_PROVIDE",
 	PRESENCE_INTERVAL = 3,
 	COMMAND_POLL_INTERVAL = 0.35,
 	COMMAND_COOLDOWN = 0.4,
@@ -136,7 +136,7 @@ local CHANGELOG = {
 	{
 		version = "3.9",
 		title = "Bigger tags + faster nametag loop",
-		body = "Overhead tags are a bit larger. Rival-tag cleanup no longer runs every frame. scorp-api /loader fails loudly if /script.lua is still the old 3.3 (env) build — run host\\worker\\deploy.ps1.",
+		body = "Overhead tags are a bit larger. Rival-tag cleanup no longer runs every frame. cryax-api /loader fails loudly if /script.lua is still the old 3.3 (env) build — run host\\worker\\deploy.ps1.",
 	},
 	{
 		version = "3.8",
@@ -406,7 +406,7 @@ local function applyApiHostOverride()
 		return
 	end
 	NETWORK.API_URL = host
-	NETWORK.API_ROOT = host .. "/scorp/v1"
+	NETWORK.API_ROOT = host .. "/cryax/v1"
 	if type(secret) == "string" and secret ~= "" then
 		NETWORK.API_SECRET = secret
 	end
@@ -414,7 +414,7 @@ end
 applyApiHostOverride()
 if BAKED_API_URL ~= "http://127.0.0.1:8787" and string.find(NETWORK.API_URL, "127.0.0.1", 1, true) then
 	NETWORK.API_URL = BAKED_API_URL
-	NETWORK.API_ROOT = BAKED_API_URL .. "/scorp/v1"
+	NETWORK.API_ROOT = BAKED_API_URL .. "/cryax/v1"
 end
 
 local function executorGethui(): Instance?
@@ -2180,7 +2180,7 @@ local function destroyExisting(name: string, player: Player, mountedParent: Inst
 		end
 		if inst:IsA("ScreenGui") then
 			local lower = string.lower(inst.Name)
-			if string.find(lower, "scorp", 1, true) or string.find(lower, "kryptex", 1, true) or string.find(lower, "scythe", 1, true) then
+			if string.find(lower, "cryax", 1, true) or string.find(lower, "cryax", 1, true) or string.find(lower, "cryax", 1, true) then
 				return true
 			end
 		end
@@ -2351,8 +2351,8 @@ local function stripForeignNametags(keep: Instance?, liveEpoch: number?)
 					local lower = string.lower(child.Name)
 					if child.Name == GUI_NAME
 						or child.Name == "ScorpNametagGui"
-						or string.find(lower, "kryptex", 1, true)
-						or string.find(lower, "scythe", 1, true)
+						or string.find(lower, "cryax", 1, true)
+						or string.find(lower, "cryax", 1, true)
 					then
 						table.insert(matches, child)
 					end
@@ -6982,8 +6982,8 @@ local function createScriptTags(
 						local lower = string.lower(child.Name)
 						if child.Name == GUI_NAME
 							or child.Name == "ScorpNametagGui"
-							or string.find(lower, "kryptex", 1, true)
-							or string.find(lower, "scythe", 1, true)
+							or string.find(lower, "cryax", 1, true)
+							or string.find(lower, "cryax", 1, true)
 						then
 							child.Enabled = false
 						end
