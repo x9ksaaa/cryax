@@ -1,6 +1,6 @@
 {
   "build": {
-    "builder": "PYTHON",
+    "builder": "RAILPACK",
     "rootDirectory": "host"
   },
   "deploy": {
