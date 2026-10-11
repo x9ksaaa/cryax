@@ -1,0 +1,9 @@
+{
+  "build": {
+    "builder": "PYTHON",
+    "rootDirectory": "host"
+  },
+  "deploy": {
+    "startCommand": "python main.py"
+  }
+}
